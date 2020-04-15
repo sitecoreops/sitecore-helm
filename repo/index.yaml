@@ -1,15 +1,15 @@
 apiVersion: v1
 entries:
-  sitecore-xm:
+  sitecore930-xm:
   - apiVersion: v2
     appVersion: 9.3.0
-    created: "2020-04-15T21:21:45.6211154+02:00"
+    created: "2020-04-15T21:43:24.0623849+02:00"
     description: A Sitecore XM Helm chart for Kubernetes
-    digest: c7438f6aa60eb633957b65f51f381f4e9b05b0c4d9c7ee55a73f15226c247ed1
+    digest: 680e490364ac82de0ee9683cc866608f3ac26d7551f2325f1f372ec9e9079953
     icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png?202004140646
-    name: sitecore-xm
+    name: sitecore930-xm
     type: application
     urls:
-    - sitecore-xm-1.0.0.tgz
+    - sitecore930-xm-1.0.0.tgz
     version: 1.0.0
-generated: "2020-04-15T21:21:45.6180965+02:00"
+generated: "2020-04-15T21:43:24.0573563+02:00"

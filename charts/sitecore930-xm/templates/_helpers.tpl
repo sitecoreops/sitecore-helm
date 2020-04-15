@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "sitecore-xm.name" -}}
+{{- define "sitecore930-xm.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "sitecore-xm.fullname" -}}
+{{- define "sitecore930-xm.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "sitecore-xm.chart" -}}
+{{- define "sitecore930-xm.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "sitecore-xm.labels" -}}
-helm.sh/chart: {{ include "sitecore-xm.chart" . }}
-{{ include "sitecore-xm.selectorLabels" . }}
+{{- define "sitecore930-xm.labels" -}}
+helm.sh/chart: {{ include "sitecore930-xm.chart" . }}
+{{ include "sitecore930-xm.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "sitecore-xm.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "sitecore-xm.name" . }}
+{{- define "sitecore930-xm.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "sitecore930-xm.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "sitecore-xm.serviceAccountName" -}}
+{{- define "sitecore930-xm.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create -}}
-    {{ default (include "sitecore-xm.fullname" .) .Values.serviceAccount.name }}
+    {{ default (include "sitecore930-xm.fullname" .) .Values.serviceAccount.name }}
 {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
 {{- end -}}
