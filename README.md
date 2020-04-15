@@ -48,6 +48,8 @@ helm upgrade release1 sitecoreops/sitecore930-xm --install --namespace $namespac
 kubectl port-forward deploy/release1-cm 7777:80 --namespace $namespace
 ```
 
+> Add `--dry-run` the to Helm upgrade/install command to verify deployment without installing anything.
+
 ## TODO's
 
 - GitHub action for updating repo in GitHub Pages branch.
