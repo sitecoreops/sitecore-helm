@@ -1,0 +1,31 @@
+sql:
+  image:
+    tag: sitecore-xm-sql:9.3.0-linux
+  volumeClaim:
+    storageClassName: managed-premium
+    storageSize: 5Gi
+    accessModes:
+      - ReadWriteOnce
+
+solr:
+  image:
+    tag: sitecore-xm-solr:9.3.0-linux
+  volumeClaim:
+    storageClassName: managed-premium
+    storageSize: 1Gi
+    accessModes:
+      - ReadWriteOnce
+
+cd:
+  image:
+    tag: sitecore-xm-cd:9.3.0-windowsservercore-ltsc2019
+
+cm:
+  image:
+    tag: sitecore-xm-cm:9.3.0-windowsservercore-ltsc2019
+  adminPassword: d7uRoS42Qcm8UofvVLiXciUBcUeZELsTo8KD9o6KderQr9Z8uZ9CHisFJNRz46WTZ5qCRu
+  unicornSharedSecret: d7uRoS42Qcm8UofvVLiXciUBcUeZELsTo8KD9o6KderQr9Z8uZ9CHisFJNRz46WTZ5qCRu
+
+global:
+  sqlSaPassword: d7uRoS42Qcm8UofvVLiXciUBcUeZELsTo8KD9o6KderQr9Z8uZ9CHisFJNRz46WTZ5qCRu
+  telerikEncryptionKey: d7uRoS42Qcm8UofvVLiXciUBcUeZELsTo8KD9o6KderQr9Z8uZ9CHisFJNRz46WTZ5qCRu

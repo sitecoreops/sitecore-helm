@@ -1,0 +1,51 @@
+image:
+  tag:
+  pullPolicy: Always
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 8983
+
+javaMem: "-Xms768M -Xmx768M"
+solrHeap: "768M"
+
+resources:
+  limits:
+    cpu: 2
+    memory: 1Gi
+  requests:
+    cpu: 1
+    memory: 512Mi
+
+volumeClaim:
+  storageClassName: ""
+  storageSize: ""
+  accessModes: []
+
+livenessProbe:
+  initialDelaySeconds: 45
+  periodSeconds: 10
+
+readinessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 5
+
+nodeSelector:
+  kubernetes.io/os: linux
+
+tolerations: []
+
+affinity: {}

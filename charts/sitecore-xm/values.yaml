@@ -1,0 +1,32 @@
+sql:
+  image:
+    tag:
+  volumeClaim:
+    storageClassName: managed-premium
+    storageSize: 5Gi
+    accessModes:
+      - ReadWriteOnce
+
+solr:
+  image:
+    tag:
+  volumeClaim:
+    storageClassName: managed-premium
+    storageSize: 1Gi
+    accessModes:
+      - ReadWriteOnce
+
+cd:
+  image:
+    tag:
+
+cm:
+  image:
+    tag:
+  adminPassword:
+  unicornSharedSecret:
+
+global:
+  licenseFileSecretName: license.xml
+  sqlSaPassword:
+  telerikEncryptionKey:

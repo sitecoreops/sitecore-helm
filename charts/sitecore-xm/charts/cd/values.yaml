@@ -1,0 +1,65 @@
+replicaCount: 2
+
+image:
+  tag:
+  pullPolicy: Always
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name:
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+solrServiceNameOverride: ""
+sqlServiceNameOverride: ""
+
+licenseFileSecretName:
+sqlSaPassword:
+telerikEncryptionKey:
+
+entrypoint:
+  sitecoreLogEnabled: "true"
+  iisAccessLogEnabled: "false"
+  iisErrorLogEnabled: "false"
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts: []
+  tls: []
+
+resources:
+  limits:
+    cpu: 2
+    memory: 2Gi
+  requests:
+    cpu: 0.5
+    memory: 1Gi
+
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 20
+  timeoutSeconds: 60
+
+readinessProbe:
+  initialDelaySeconds: 10
+  periodSeconds: 10
+  timeoutSeconds: 60
+
+nodeSelector:
+  kubernetes.io/os: windows
+
+tolerations: []
+
+affinity: {}
