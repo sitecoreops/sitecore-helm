@@ -61,7 +61,7 @@ kubectl port-forward deploy/$release-cm 7777:80 --namespace $namespace
 
 ## TODO's
 
-- GitHub action for updating repo in GitHub Pages branch (or another repo).
+- GitHub action for updating repo in GitHub Pages branch (or another repo). See also https://github.com/marketplace/actions/helm-chart-releaser
 - Unicorn shared secret should be optional and/or container environment variables customizable.
 - Document values: [https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml](https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml)
 - Set `required` on required values.
