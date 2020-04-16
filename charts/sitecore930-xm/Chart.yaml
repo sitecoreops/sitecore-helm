@@ -5,3 +5,13 @@ icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png
 type: application
 version: 1.0.0
 appVersion: 9.3.0
+keywords:
+  - sitecore
+  - cms
+  - windows
+home: https://github.com/sitecoreops/sitecore-helm
+sources:
+  - https://github.com/sitecoreops/sitecore-helm/tree/master/charts/sitecore930-xm
+maintainers:
+  - name: Per Bering
+    url: https://github.com/pbering/
