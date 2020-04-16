@@ -1,15 +1,15 @@
 # Sitecore Helm charts
 
-Add this repo:
+Quick start:
 
-```shell
-helm repo add sitecoreops https://raw.githubusercontent.com/sitecoreops/sitecore-helm/master/repo
-```
+```powershell
+# add this repo to helm
+helm repo add sitecoreops https://sitecoreops.github.io/sitecore-helm
 
-Show available charts
-
-```shell
+# refresh all repositories
 helm repo update
+
+# search charts
 helm search repo sitecore
 ```
 
@@ -61,7 +61,6 @@ kubectl port-forward deploy/$release-cm 7777:80 --namespace $namespace
 
 ## TODO's
 
-- GitHub action for updating repo in GitHub Pages branch (or another repo). See also https://github.com/marketplace/actions/helm-chart-releaser
 - Unicorn shared secret should be optional and/or container environment variables customizable.
 - Document values: [https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml](https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml)
 - Set `required` on required values.
