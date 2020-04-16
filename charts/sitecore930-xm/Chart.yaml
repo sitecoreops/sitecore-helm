@@ -10,6 +10,7 @@ keywords:
   - sitecore
   - cms
   - windows
+  - experience
 home: https://github.com/sitecoreops/sitecore-helm
 sources:
   - https://github.com/sitecoreops/sitecore-helm/tree/master/charts/sitecore930-xm
