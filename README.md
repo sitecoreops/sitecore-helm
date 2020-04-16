@@ -1,4 +1,4 @@
-# Sitecore Helm charts
+# Unofficial Sitecore Helm charts
 
 ![Release Charts](https://github.com/sitecoreops/sitecore-helm/workflows/Release%20Charts/badge.svg)
 
@@ -26,7 +26,7 @@ helm search repo sitecore
 - Kubernetes 1.15+
 - Helm 3+
 - A Sitecore license file.
-- Access to a Docker registry with Sitecore images.
+- Access to a Docker registry with Sitecore images (both Windows and Linux).
 
 ## Examples
 
@@ -45,11 +45,12 @@ kubectl create secret generic "license.xml" --from-file "C:\license\license.xml"
 $release = "release1"
 
 helm upgrade $release sitecoreops/sitecore930-xm --install --namespace $namespace `
-    --set solr.image.tag="<IMAGE TAG OR DIGEST>" `
-    --set sql.image.tag="<IMAGE TAG OR DIGEST>" `
-    --set cd.image.tag="<IMAGE TAG OR DIGEST>" `
-    --set cm.image.tag="<IMAGE TAG OR DIGEST>" `
+    --set solr.image.tag="<LINUX IMAGE TAG OR DIGEST>" `
+    --set sql.image.tag="<LINUX IMAGE TAG OR DIGEST>" `
+    --set cd.image.tag="<WINDOWS IMAGE TAG OR DIGEST>" `
+    --set cm.image.tag="<WINDOWS IMAGE TAG OR DIGEST>" `
     --set cm.adminPassword="<INSERT SECRET HERE>" `
+    --set cm.unicornSharedSecret="<INSERT SECRET HERE>" `
     --set global.sqlSaPassword="<INSERT SECRET HERE>" `
     --set global.telerikEncryptionKey="<INSERT SECRET HERE>" `
     --timeout "30m0s" `
