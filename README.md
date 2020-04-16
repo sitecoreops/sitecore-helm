@@ -1,5 +1,7 @@
 # Sitecore Helm charts
 
+![Release Charts](https://github.com/sitecoreops/sitecore-helm/workflows/Release%20Charts/badge.svg)
+
 Quick start:
 
 ```powershell
