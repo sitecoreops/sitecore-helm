@@ -1,9 +1,10 @@
 apiVersion: v2
 name: sitecore930-xm
-description: A Sitecore XM Helm chart for Kubernetes
+description: A Sitecore 9.3.0 XM Helm chart for Kubernetes
 icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png?202004140646
 type: application
-version: 1.0.1
+kubeVersion: ">= 1.15.0"
+version: 1.0.0
 appVersion: 9.3.0
 keywords:
   - sitecore
