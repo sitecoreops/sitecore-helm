@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  sitecore930-xm:
+  - apiVersion: v2
+    appVersion: 9.3.0
+    created: "2020-04-16T08:17:00.152409027Z"
+    description: A Sitecore 9.3.0 XM Helm chart for Kubernetes
+    digest: 70e564d60a6ebc601b4f2f09b5e1bd23137fd15a122f2b1a72fff43c41e5c5d2
+    home: https://github.com/sitecoreops/sitecore-helm
+    icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png?202004140646
+    keywords:
+    - sitecore
+    - cms
+    - windows
+    - experience
+    kubeVersion: '>= 1.15.0'
+    maintainers:
+    - name: Per Bering
+      url: https://github.com/pbering/
+    name: sitecore930-xm
+    sources:
+    - https://github.com/sitecoreops/sitecore-helm/tree/master/charts/sitecore930-xm
+    type: application
+    urls:
+    - https://github.com/sitecoreops/sitecore-helm/releases/download/sitecore930-xm-1.0.0/sitecore930-xm-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-04-16T08:17:00.048505777Z"
