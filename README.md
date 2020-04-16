@@ -3,7 +3,7 @@
 Quick start:
 
 ```powershell
-# add this repo to helm
+# add this repository to helm
 helm repo add sitecoreops https://sitecoreops.github.io/sitecore-helm
 
 # refresh all repositories
