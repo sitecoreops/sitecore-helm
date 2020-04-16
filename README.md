@@ -1,4 +1,4 @@
-# Sitecore unofficial Helm Repository
+# Unofficial Sitecore Helm Repository
 
 Quick start:
 
