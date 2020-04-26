@@ -88,13 +88,13 @@ Requirements:
 Requirements:
 
 - [https://hub.helm.sh/charts/stable/nginx-ingress](https://hub.helm.sh/charts/stable/nginx-ingress) needs to be installed.
-- [https://hub.helm.sh/charts/jetstack/cert-manager](https://hub.helm.sh/charts/jetstack/cert-manager) needs to be installed and Let's Encrypt configured.
+- [https://hub.helm.sh/charts/jetstack/cert-manager](https://hub.helm.sh/charts/jetstack/cert-manager) needs to be installed and a Let's Encrypt [issuer](https://cert-manager.io/docs/configuration/acme/http01/).
 
 ```powershell
 --set cd.ingress.enabled=true `
 --set cd.ingress.annotations."kubernetes\.io/ingress\.class"="nginx" `
 --set cd.ingress.annotations."nginx\.ingress\.kubernetes\.io/affinity"="cookie" `
---set cd.ingress.annotations."cert-manager\.io/issuer"="letsencrypt-prod" `
+--set cd.ingress.annotations."cert-manager\.io/issuer"="<NAME OF ISSUER>" `
 --set cd.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CD>" `
 --set cd.ingress.tls[0].secretName="letsencrypt-tls" `
 --set cd.ingress.hosts[0].host="<HOST NAME FOR THE CD>" `
@@ -104,7 +104,7 @@ Requirements:
 --set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-connect-timeout"="60s" `
 --set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-send-timeout"="60s" `
 --set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-read-timeout"="60s" `
---set cm.ingress.annotations."cert-manager\.io/issuer"="letsencrypt-prod" `
+--set cm.ingress.annotations."cert-manager\.io/issuer"="<NAME OF ISSUER>" `
 --set cm.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CM>" `
 --set cm.ingress.tls[0].secretName="letsencrypt-tls" `
 --set cm.ingress.hosts[0].host="<HOST NAME FOR THE CM>" `
