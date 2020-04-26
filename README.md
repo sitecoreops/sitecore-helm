@@ -62,6 +62,55 @@ kubectl port-forward deploy/$release-cm 7777:80 --namespace $namespace
 
 > Add `--dry-run` the to Helm upgrade/install command to verify deployment without installing anything.
 
+### Deployment with HTTP ingress
+
+Requirements:
+
+- [https://hub.helm.sh/charts/stable/nginx-ingress](https://hub.helm.sh/charts/stable/nginx-ingress) needs to be installed.
+
+```powershell
+--set cd.ingress.enabled=true `
+--set cd.ingress.annotations."kubernetes\.io/ingress\.class"="nginx" `
+--set cd.ingress.annotations."nginx\.ingress\.kubernetes\.io/affinity"="cookie" `
+--set cd.ingress.hosts[0].host="<HOST NAME FOR THE CD>" `
+--set cd.ingress.hosts[0].paths[0]="/" `
+--set cm.ingress.enabled=true `
+--set cm.ingress.annotations."kubernetes\.io/ingress\.class"="nginx" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-connect-timeout"="60s" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-send-timeout"="60s" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-read-timeout"="60s" `
+--set cm.ingress.hosts[0].host="<HOST NAME FOR THE CM>" `
+--set cm.ingress.hosts[0].paths[0]="/" `
+```
+
+### Deployment with HTTPS ingress and auto generated Let's Encrypt certificates
+
+Requirements:
+
+- [https://hub.helm.sh/charts/stable/nginx-ingress](https://hub.helm.sh/charts/stable/nginx-ingress) needs to be installed.
+- [https://hub.helm.sh/charts/jetstack/cert-manager](https://hub.helm.sh/charts/jetstack/cert-manager) needs to be installed and Let's Encrypt configured.
+
+```powershell
+--set cd.ingress.enabled=true `
+--set cd.ingress.annotations."kubernetes\.io/ingress\.class"="nginx" `
+--set cd.ingress.annotations."nginx\.ingress\.kubernetes\.io/affinity"="cookie" `
+--set cd.ingress.annotations."cert-manager\.io/issuer"="letsencrypt-prod" `
+--set cd.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CD>" `
+--set cd.ingress.tls[0].secretName="letsencrypt-tls" `
+--set cd.ingress.hosts[0].host="<HOST NAME FOR THE CD>" `
+--set cd.ingress.hosts[0].paths[0]="/" `
+--set cm.ingress.enabled=true `
+--set cm.ingress.annotations."kubernetes\.io/ingress\.class"="nginx" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-connect-timeout"="60s" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-send-timeout"="60s" `
+--set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-read-timeout"="60s" `
+--set cm.ingress.annotations."cert-manager\.io/issuer"="letsencrypt-prod" `
+--set cm.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CM>" `
+--set cm.ingress.tls[0].secretName="letsencrypt-tls" `
+--set cm.ingress.hosts[0].host="<HOST NAME FOR THE CM>" `
+--set cm.ingress.hosts[0].paths[0]="/" `
+```
+
 ## TODO's
 
 - Unicorn shared secret should be optional and/or container environment variables customizable.
