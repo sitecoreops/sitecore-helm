@@ -96,7 +96,7 @@ Requirements:
 --set cd.ingress.annotations."nginx\.ingress\.kubernetes\.io/affinity"="cookie" `
 --set cd.ingress.annotations."cert-manager\.io/issuer"="<NAME OF ISSUER>" `
 --set cd.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CD>" `
---set cd.ingress.tls[0].secretName="letsencrypt-tls" `
+--set cd.ingress.tls[0].secretName="letsencrypt-tls-cd" `
 --set cd.ingress.hosts[0].host="<HOST NAME FOR THE CD>" `
 --set cd.ingress.hosts[0].paths[0]="/" `
 --set cm.ingress.enabled=true `
@@ -106,7 +106,7 @@ Requirements:
 --set cm.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-read-timeout"="60s" `
 --set cm.ingress.annotations."cert-manager\.io/issuer"="<NAME OF ISSUER>" `
 --set cm.ingress.tls[0].hosts[0]="<HOST NAME FOR THE CM>" `
---set cm.ingress.tls[0].secretName="letsencrypt-tls" `
+--set cm.ingress.tls[0].secretName="letsencrypt-tls-cm" `
 --set cm.ingress.hosts[0].host="<HOST NAME FOR THE CM>" `
 --set cm.ingress.hosts[0].paths[0]="/" `
 ```
