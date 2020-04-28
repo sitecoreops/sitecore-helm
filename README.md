@@ -113,6 +113,6 @@ Requirements:
 
 ## TODO's
 
-- Unicorn shared secret should be optional and/or container environment variables customizable.
+- Unicorn shared secret / admin password should be optional and/or container environment variables customizable.
 - Document values: [https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml](https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml)
 - Set `required` on required values.
