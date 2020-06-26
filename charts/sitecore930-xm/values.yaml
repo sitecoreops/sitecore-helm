@@ -19,12 +19,15 @@ solr:
 cd:
   image:
     tag:
+  env:
 
 cm:
   image:
     tag:
+  env:
   adminPassword:
   unicornSharedSecret:
+  environmentVariables:
 
 global:
   licenseFileSecretName: license.xml

@@ -82,6 +82,9 @@ spec:
                 secretKeyRef:
                   name: {{ include "cm.secretName" . }}
                   key: admin_password
+            {{- with .Values.env }}
+              {{- toYaml . | nindent 12 }}
+            {{- end }}
           ports:
             - name: default
               containerPort: 80

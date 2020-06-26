@@ -17,6 +17,10 @@ helm search repo sitecore
 
 ## Changelog
 
+### June 2020
+
+- [Added] Ability to append environment variables on CM/CD pods. Use `--set cm.env[0].name="XXX" --set cm.env[0].value="YYY"`
+
 ### April 2020
 
 - [Added] Sitecore 9.3 XM chart `sitecore930-xm`.

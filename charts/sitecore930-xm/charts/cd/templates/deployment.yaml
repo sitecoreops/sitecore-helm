@@ -68,6 +68,9 @@ spec:
                 secretKeyRef:
                   name: {{ include "cd.secretName" . }}
                   key: telerik_encryption_key
+            {{- with .Values.env }}
+              {{- toYaml . | nindent 12 }}
+            {{- end }}
           ports:
             - name: default
               containerPort: 80

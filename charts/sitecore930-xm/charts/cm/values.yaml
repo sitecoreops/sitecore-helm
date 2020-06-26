@@ -28,6 +28,8 @@ adminPassword:
 telerikEncryptionKey:
 unicornSharedSecret:
 
+env:
+
 entrypoint:
   sitecoreLogEnabled: "true"
   iisAccessLogEnabled: "false"
