@@ -28,12 +28,8 @@ adminPassword:
 telerikEncryptionKey:
 unicornSharedSecret:
 
+envOverride: {}
 env:
-
-entrypoint:
-  sitecoreLogEnabled: "true"
-  iisAccessLogEnabled: "false"
-  iisErrorLogEnabled: "false"
 
 ingress:
   enabled: false

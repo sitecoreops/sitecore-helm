@@ -36,23 +36,39 @@ spec:
             - "& C:\\tools\\entrypoints\\iis\\Production.ps1"
           env:
             - name: SITECORE_LICENSE_LOCATION
-              value: "C:\\license\\license.xml"
+              value: {{ empty .Values.envOverride.SITECORE_LICENSE_LOCATION | ternary "C:\\license\\license.xml" .Values.envOverride.SITECORE_LICENSE_LOCATION | quote }}
             - name: SITECORE_APPSETTINGS_ROLE__DEFINE
-              value: "ContentManagement, Indexing"
+              value: {{ empty .Values.envOverride.SITECORE_APPSETTINGS_ROLE__DEFINE | ternary "ContentDelivery" .Values.envOverride.SITECORE_APPSETTINGS_ROLE__DEFINE | quote }}
             - name: ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED
-              value: "{{ .Values.entrypoint.iisAccessLogEnabled }}"
+              value: {{ empty .Values.envOverride.ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED | ternary "false" .Values.envOverride.ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED | quote }}
             - name: ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED
-              value: "{{ .Values.entrypoint.iisErrorLogEnabled }}"
+              value: {{ empty .Values.envOverride.ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED | ternary "false" .Values.envOverride.ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED | quote }}
             - name: ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED
-              value: "{{ .Values.entrypoint.sitecoreLogEnabled }}"
+              value: {{ empty .Values.envOverride.ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED | ternary "true" .Values.envOverride.ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED | quote }}
             - name: SITECORE_CONNECTIONSTRINGS_SECURITY
+            {{- if empty .Values.envOverride.SITECORE_CONNECTIONSTRINGS_SECURITY}}
               value: "Data Source={{ include "sql.fullName" . }};Initial Catalog=Sitecore.Core;User ID=sa;Password={{ .Values.global.sqlSaPassword }}"
+            {{- else}}
+              value: {{.Values.envOverride.SITECORE_CONNECTIONSTRINGS_SECURITY | quote}}
+            {{- end}}
             - name: SITECORE_CONNECTIONSTRINGS_WEB
+            {{- if empty .Values.envOverride.SITECORE_CONNECTIONSTRINGS_WEB}}
               value: "Data Source={{ include "sql.fullName" . }};Initial Catalog=Sitecore.Web;User ID=sa;Password={{ .Values.global.sqlSaPassword }}"
+            {{- else}}
+              value: {{.Values.envOverride.SITECORE_CONNECTIONSTRINGS_WEB | quote}}
+            {{- end}}
             - name: SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS
+            {{- if empty .Values.envOverride.SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS}}
               value: "Data Source={{ include "sql.fullName" . }};Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password={{ .Values.global.sqlSaPassword }}"
+            {{- else}}
+              value: {{.Values.envOverride.SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS | quote}}
+            {{- end}}
             - name: SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH
+            {{- if empty .Values.envOverride.SITECORE_CONNECTIONSTRINGS_SOLRSEARCH }}
               value: "http://{{ include "solr.fullName" . }}:8983/solr"
+            {{- else}}
+              value: {{.Values.envOverride.SITECORE_CONNECTIONSTRINGS_SOLRSEARCH | quote}}
+            {{- end}}
             - name: SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY
               valueFrom:
                 secretKeyRef:

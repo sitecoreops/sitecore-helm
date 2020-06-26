@@ -19,7 +19,8 @@ helm search repo sitecore
 
 ### June 2020
 
-- [Added] Ability to append environment variables on CM/CD pods. Use `--set cm.env[0].name="XXX" --set cm.env[0].value="YYY"`
+- [Added] Ability to override default environment variables on CM/CD deployments. Example `--set cm.envOverride.SITECORE_CONNECTIONSTRINGS_CORE="XXX"`.
+- [Added] Ability to append environment variables on CM/CD deployments. Example `--set cm.env[0].name="XXX" --set cm.env[0].value="YYY"`.
 
 ### April 2020
 
@@ -117,6 +118,6 @@ Requirements:
 
 ## TODO's
 
-- Unicorn shared secret / admin password should be optional and/or container environment variables customizable.
+- Unicorn shared secret / admin password should be optional.
 - Document values: [https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml](https://helm.sh/docs/chart_best_practices/values/#document-valuesyaml)
 - Set `required` on required values.

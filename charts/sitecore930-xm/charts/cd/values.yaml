@@ -28,10 +28,8 @@ licenseFileSecretName:
 sqlSaPassword:
 telerikEncryptionKey:
 
-entrypoint:
-  sitecoreLogEnabled: "true"
-  iisAccessLogEnabled: "false"
-  iisErrorLogEnabled: "false"
+envOverride: {}
+env:
 
 ingress:
   enabled: false
