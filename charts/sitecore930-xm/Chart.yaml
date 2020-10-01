@@ -4,7 +4,7 @@ description: A Sitecore 9.3.0 XM Helm chart for Kubernetes
 icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png?202004140646
 type: application
 kubeVersion: ">= 1.15.0"
-version: 1.1.0
+version: 1.1.1
 appVersion: 9.3.0
 keywords:
   - sitecore
@@ -17,3 +17,6 @@ sources:
 maintainers:
   - name: Per Bering
     url: https://github.com/pbering/
+dependencies:
+- name: sql
+  condition: sql.enabled

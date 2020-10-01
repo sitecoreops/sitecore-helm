@@ -17,6 +17,10 @@ helm search repo sitecore
 
 ## Changelog
 
+### October 2020
+
+- [Added] Ability to turn off sql: Example `--set sql.enabled=false`
+
 ### June 2020
 
 - [Added] Ability to override default environment variables on CM/CD deployments. Example `--set cm.envOverride.SITECORE_CONNECTIONSTRINGS_CORE="XXX"`.

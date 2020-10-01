@@ -6,6 +6,7 @@ sql:
     storageSize: 5Gi
     accessModes:
       - ReadWriteOnce
+  enabled: true
 
 solr:
   image:
