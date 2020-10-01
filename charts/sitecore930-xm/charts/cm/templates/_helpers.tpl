@@ -89,10 +89,10 @@ Create a default fully qualified solr name.
 Create a default fully qualified sql name.
 */}}
 {{- define "sql.fullName" -}}
-{{- if .Values.solrServiceNameOverride -}}
-{{- .Values.solrServiceNameOverride | trunc 63 | trimSuffix "-" -}}
+{{- if .Values.sqlServiceNameOverride -}}
+{{- .Values.sqlServiceNameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
-{{- $name := default "sql" .Values.solrServiceNameOverride -}}
+{{- $name := default "sql" .Values.sqlServiceNameOverride -}}
 {{- if contains $name .Release.Name -}}
 {{- .Release.Name | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
