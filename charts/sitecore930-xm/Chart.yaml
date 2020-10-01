@@ -19,5 +19,5 @@ maintainers:
     url: https://github.com/pbering/
 dependencies:
 - name: sql
-  version: ~1.1.1
+  version: ~1.0.0
   condition: sql.enabled
