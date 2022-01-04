@@ -17,6 +17,10 @@ helm search repo sitecore
 
 ## Changelog
 
+### January 2021
+
+- [Changed] Using stable ingress api version `networking.k8s.io/v1`.
+
 ### October 2020
 
 - [Added] Ability to turn off sql: Example `--set sql.enabled=false`
