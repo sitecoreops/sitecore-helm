@@ -36,7 +36,7 @@ spec:
           - name: data
             mountPath: /data
       containers:
-        - name: {{ include "sql.fullName" . }}
+        - name: {{ include "solr.fullName" . }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.tag }}"
