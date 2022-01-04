@@ -19,7 +19,8 @@ helm search repo sitecore
 
 ### January 2021
 
-- [Changed] Using stable ingress api version `networking.k8s.io/v1`.
+- [Change] Now requires Kubernetes v1.19.0 or later.
+- [Change] Using stable ingress api version `networking.k8s.io/v1`.
 
 ### October 2020
 
