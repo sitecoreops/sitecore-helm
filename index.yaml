@@ -3,6 +3,34 @@ entries:
   sitecore930-xm:
   - apiVersion: v2
     appVersion: 9.3.0
+    created: "2022-01-04T10:46:15.560693365Z"
+    dependencies:
+    - condition: sql.enabled
+      name: sql
+      repository: ""
+      version: ~1.0.0
+    description: A Sitecore 9.3.0 XM Helm chart for Kubernetes
+    digest: e1848199dba745744ed90d9b8b86112d81cc29a8d91174e8170e09cd74ab37c1
+    home: https://github.com/sitecoreops/sitecore-helm
+    icon: https://mygetwwwsitecoreeu.blob.core.windows.net/feedicons/sc-packages.png?202004140646
+    keywords:
+    - sitecore
+    - cms
+    - windows
+    - experience
+    kubeVersion: '>= 1.15.0'
+    maintainers:
+    - name: Per Bering
+      url: https://github.com/pbering/
+    name: sitecore930-xm
+    sources:
+    - https://github.com/sitecoreops/sitecore-helm/tree/master/charts/sitecore930-xm
+    type: application
+    urls:
+    - https://github.com/sitecoreops/sitecore-helm/releases/download/sitecore930-xm-1.1.3/sitecore930-xm-1.1.3.tgz
+    version: 1.1.3
+  - apiVersion: v2
+    appVersion: 9.3.0
     created: "2020-10-01T11:17:35.620753641Z"
     dependencies:
     - condition: sql.enabled
@@ -103,4 +131,4 @@ entries:
     urls:
     - https://github.com/sitecoreops/sitecore-helm/releases/download/sitecore930-xm-1.0.0/sitecore930-xm-1.0.0.tgz
     version: 1.0.0
-generated: "2020-04-16T08:17:00.048505777Z"
+generated: "2022-01-04T10:46:15.56072957Z"
