@@ -53,7 +53,7 @@ spec:
                   key: sql_sa_password
           ports:
             - name: default
-              containerPort: 1443
+              containerPort: 1433
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
