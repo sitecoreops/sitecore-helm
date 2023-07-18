@@ -17,6 +17,10 @@ helm search repo sitecore
 
 ## Changelog
 
+### June 2023
+
+- [Fix] SQL Container port number was wrong.
+
 ### January 2021
 
 - [Change] Now requires Kubernetes v1.19.0 or later.
